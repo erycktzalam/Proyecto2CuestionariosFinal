@@ -11,7 +11,7 @@ public class AppCuestionario extends Application {
     @Override
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(AppCuestionario.class.getResource("principal.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 1002, 602);
+        Scene scene = new Scene(fxmlLoader.load(), 997, 601);
         stage.setTitle("Proyecto Cuestionarios");
         stage.setScene(scene);
         stage.show();

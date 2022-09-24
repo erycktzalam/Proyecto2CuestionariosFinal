@@ -3,6 +3,8 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.effect.ColorAdjust?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -11,22 +13,20 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="601.0" prefWidth="997.0"
-            xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="com.proyecto2.proyecto2cuestionarios.MainController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="601.0" prefWidth="997.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.proyecto2.proyecto2cuestionarios.MainController">
    <children>
       <AnchorPane prefHeight="601.0" prefWidth="255.0" style="-fx-background-color: #F4F1E9;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="700.0" AnchorPane.topAnchor="0.0">
          <children>
             <VBox layoutX="78.0" layoutY="194.0" prefHeight="397.0" prefWidth="297.0" spacing="15.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="194.0">
                <children>
-                  <Button fx:id="btnActivar" mnemonicParsing="false" prefHeight="60.0" prefWidth="297.0" style="-fx-background-color: #294339;" text="Activar" textFill="WHITE">
+                  <Button fx:id="btnActivar" mnemonicParsing="false" onAction="#onClickMenu" onMouseDragEntered="#onClickEntered" onMouseDragExited="#onClickExited" prefHeight="60.0" prefWidth="297.0" style="-fx-background-color: #294339;" text="Activar" textFill="WHITE">
                      <VBox.margin>
                         <Insets />
                      </VBox.margin>
                      <graphic>
                         <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../../../../imagenes/icon_activar.png" />
+                              <Image url="file:/C:/Users/Eryck%20Tz/OneDrive/Documentos/Programacion%20II/Proyectos%20Progra%202/Proyecto2Cuestionarios/src/main/imagenes/icon_activar.png" />
                            </image>
                         </ImageView>
                      </graphic>
@@ -37,11 +37,11 @@
                         <ColorAdjust />
                      </effect>
                   </Button>
-                  <Button fx:id="btnClonar" mnemonicParsing="false" prefHeight="60.0" prefWidth="299.0" style="-fx-background-color: #294339;" text="Clonar" textFill="WHITE">
+                  <Button fx:id="btnClonar" mnemonicParsing="false" onAction="#onClickMenu" prefHeight="60.0" prefWidth="299.0" style="-fx-background-color: #294339;" text="Clonar" textFill="WHITE">
                      <graphic>
                         <ImageView fitHeight="48.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../../../../imagenes/icon_clonar.png" />
+                              <Image url="file:/C:/Users/Eryck%20Tz/OneDrive/Documentos/Programacion%20II/Proyectos%20Progra%202/Proyecto2Cuestionarios/src/main/imagenes/icon_clonar.png" />
                            </image>
                         </ImageView>
                      </graphic>
@@ -49,11 +49,11 @@
                         <Font name="Baskerville Old Face" size="20.0" />
                      </font>
                   </Button>
-                  <Button fx:id="btnEvaluar" mnemonicParsing="false" prefHeight="60.0" prefWidth="306.0" style="-fx-background-color: #294339;" text="Evaluar" textFill="WHITE">
+                  <Button fx:id="btnEvaluar" mnemonicParsing="false" onAction="#onClickMenu" prefHeight="60.0" prefWidth="306.0" style="-fx-background-color: #294339;" text="Evaluar" textFill="WHITE">
                      <graphic>
                         <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../../../../imagenes/icon_evaluar.png" />
+                              <Image url="file:/C:/Users/Eryck%20Tz/OneDrive/Documentos/Programacion%20II/Proyectos%20Progra%202/Proyecto2Cuestionarios/src/main/imagenes/icon_evaluar.png" />
                            </image>
                         </ImageView>
                      </graphic>
@@ -61,11 +61,11 @@
                         <Font name="Baskerville Old Face" size="20.0" />
                      </font>
                   </Button>
-                  <Button fx:id="btnTop3" mnemonicParsing="false" prefHeight="60.0" prefWidth="314.0" style="-fx-background-color: #294339;" text="Top 3" textFill="WHITE">
+                  <Button fx:id="btnTop3" mnemonicParsing="false" onAction="#onClickMenu" prefHeight="60.0" prefWidth="314.0" style="-fx-background-color: #294339;" text="Top 3" textFill="WHITE">
                      <graphic>
                         <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../../../../imagenes/icon_top.png" />
+                              <Image url="file:/C:/Users/Eryck%20Tz/OneDrive/Documentos/Programacion%20II/Proyectos%20Progra%202/Proyecto2Cuestionarios/src/main/imagenes/icon_top.png" />
                            </image>
                         </ImageView>
                      </graphic>
@@ -73,11 +73,11 @@
                         <Font name="Baskerville Old Face" size="20.0" />
                      </font>
                   </Button>
-                  <Button fx:id="btnAgregar" mnemonicParsing="false" prefHeight="60.0" prefWidth="349.0" style="-fx-background-color: #294339;" text="Agregar" textFill="WHITE">
+                  <Button fx:id="btnAgregar" mnemonicParsing="false" onAction="#onClickMenu" prefHeight="60.0" prefWidth="349.0" style="-fx-background-color: #294339;" text="Agregar" textFill="WHITE">
                      <graphic>
                         <ImageView fitHeight="45.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../../../../imagenes/icon_agregar.png" />
+                              <Image url="file:/C:/Users/Eryck%20Tz/OneDrive/Documentos/Programacion%20II/Proyectos%20Progra%202/Proyecto2Cuestionarios/src/main/imagenes/icon_agregar.png" />
                            </image>
                         </ImageView>
                      </graphic>
@@ -92,19 +92,11 @@
             </VBox>
          </children>
       </AnchorPane>
-      <AnchorPane layoutX="581.0" layoutY="105.0" prefHeight="496.0" prefWidth="697.0" style="-fx-background-color: #2B463C;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="300.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="105.0">
-         <children>
-            <Pane fx:id="panelActivar" prefHeight="456.0" prefWidth="653.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
-            <Pane fx:id="panelClonar" layoutX="7.0" layoutY="7.0" prefHeight="456.0" prefWidth="653.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
-            <Pane fx:id="panelEvaluar" layoutX="17.0" layoutY="17.0" prefHeight="456.0" prefWidth="653.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
-            <Pane fx:id="panelTop3" layoutX="17.0" layoutY="17.0" prefHeight="456.0" prefWidth="653.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
-            <Pane fx:id="panelAgregar" layoutX="17.0" layoutY="17.0" prefHeight="456.0" prefWidth="653.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
-         </children></AnchorPane>
       <AnchorPane prefHeight="183.0" prefWidth="297.0">
          <children>
             <ImageView fitHeight="175.0" fitWidth="175.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="4.0" AnchorPane.leftAnchor="61.0" AnchorPane.rightAnchor="61.0" AnchorPane.topAnchor="4.0">
                <image>
-                  <Image url="@../../../../imagenes/icon_cuestionarios.png" />
+                  <Image url="file:/C:/Users/Eryck%20Tz/OneDrive/Documentos/Programacion%20II/Proyectos%20Progra%202/Proyecto2Cuestionarios/src/main/imagenes/icon_cuestionarios.png" />
                </image>
             </ImageView>
          </children>
@@ -116,6 +108,42 @@
                   <Font name="Bowlby One SC Regular" size="30.0" />
                </font>
             </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="299.0" layoutY="107.0" prefHeight="493.0" prefWidth="703.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="300.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="107.0">
+         <children>
+            <Pane fx:id="panelAgregar" prefHeight="494.0" prefWidth="697.0" style="-fx-background-color: #70817B;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <Label text="Agregar" />
+               </children>
+            </Pane>
+            <Pane fx:id="panelTop3" prefHeight="494.0" prefWidth="697.0" style="-fx-background-color: #CFD5D3;">
+               <children>
+                  <Label text="Top3" />
+               </children>
+            </Pane>
+            <Pane fx:id="panelEvaluar" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #FCC66C;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <Label text="Evaluar" />
+               </children>
+            </Pane>
+            <Pane fx:id="panelClonar" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #FEECCE;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <Label text="Clonar" />
+               </children>
+            </Pane>
+            <Pane fx:id="panelActivar" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #ECFECE;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <Label text="Activar" />
+                  <TableView layoutX="52.0" layoutY="40.0" prefHeight="305.0" prefWidth="593.0">
+                    <columns>
+                        <TableColumn prefWidth="75.0" text="PIN" />
+                      <TableColumn prefWidth="75.0" text="Nombre" />
+                      <TableColumn prefWidth="75.0" text="Descripcion" />
+                    </columns>
+                  </TableView>
+               </children>
+            </Pane>
          </children>
       </AnchorPane>
    </children>
