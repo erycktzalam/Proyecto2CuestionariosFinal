@@ -325,7 +325,7 @@
                      <graphic>
                         <ImageView fitHeight="64.0" fitWidth="66.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../../../../imagenes/icon_finalizar.png" />
+                              <Image url="file:/C:/Users/Eryck%20Tz/OneDrive/Documentos/Programacion%20II/Proyectos%20Progra%202/Proyecto2Cuestionarios/src/main/imagenes/icon_finalizar.png" />
                            </image>
                         </ImageView>
                      </graphic>
@@ -372,6 +372,23 @@
                   <ProgressBar layoutX="460.0" layoutY="438.0" prefWidth="200.0" progress="0.0" />
                </children>
             </Pane>
+            <Pane fx:id="panelTop3" prefHeight="494.0" prefWidth="697.0" style="-fx-background-color: #F4F1E9;">
+               <children>
+                  <Label alignment="CENTER" prefHeight="40.0" prefWidth="697.0" text="Top 3 PDF">
+                     <font>
+                        <Font name="Bowlby One SC Regular" size="24.0" />
+                     </font></Label>
+                  <Button fx:id="btnPdf" layoutX="281.0" layoutY="189.0" mnemonicParsing="false" onAction="#crearPDF" prefHeight="64.0" prefWidth="136.0" text="Crear PDF">
+                     <graphic>
+                        <ImageView fitHeight="56.0" fitWidth="57.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="file:/C:/Users/Eryck%20Tz/OneDrive/Documentos/Programacion%20II/Proyectos%20Progra%202/Proyecto2Cuestionarios/src/main/imagenes/icon_pdf.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+               </children>
+            </Pane>
             <Pane fx:id="panelActivar" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #F4F1E9;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                <children>
                   <Label alignment="CENTER" prefHeight="17.0" prefWidth="697.0" text="Activación de Formulario">
@@ -387,23 +404,6 @@
                   </TableView>
                   <Button fx:id="btnActivarCuestionario" layoutX="155.0" layoutY="428.0" mnemonicParsing="false" onAction="#activar" text="Activar Cuestionario" />
                   <Button fx:id="btnClonarCuestionario" layoutX="425.0" layoutY="428.0" mnemonicParsing="false" onAction="#clonarCuestionario" text="Clonar Cuestionario" />
-               </children>
-            </Pane>
-            <Pane fx:id="panelTop3" prefHeight="494.0" prefWidth="697.0" style="-fx-background-color: #F4F1E9;">
-               <children>
-                  <Label alignment="CENTER" prefHeight="40.0" prefWidth="697.0" text="Top 3 PDF">
-                     <font>
-                        <Font name="Bowlby One SC Regular" size="24.0" />
-                     </font></Label>
-                  <Button fx:id="btnPdf" layoutX="281.0" layoutY="189.0" mnemonicParsing="false" onAction="#crearPDF" prefHeight="64.0" prefWidth="136.0" text="Crear PDF">
-                     <graphic>
-                        <ImageView fitHeight="56.0" fitWidth="57.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../../../../imagenes/icon_pdf.png" />
-                           </image>
-                        </ImageView>
-                     </graphic>
-                  </Button>
                </children>
             </Pane>
          </children>

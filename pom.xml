@@ -54,6 +54,12 @@
             <version>22.02</version>
             <classifier>javadoc</classifier>
         </dependency>
+        <!-- https://mavenlibs.com/maven/dependency/org.apache.pdfbox/pdfbox -->
+        <dependency>
+            <groupId>org.apache.pdfbox</groupId>
+            <artifactId>pdfbox</artifactId>
+            <version>2.0.27</version>
+        </dependency>
     </dependencies>
 
     <build>
@@ -104,3 +110,22 @@
         </repository>
     </repositories>
 </project>
+
+
+
+        plugins {
+        id 'java'
+        id 'application'
+        }
+
+        application {
+        mainClass = 'io.github.picodotdev.blogbitix.javapdf.Main'
+        }
+
+        repositories {
+        mavenCentral()
+        }
+
+        dependencies {
+        implementation 'org.apache.pdfbox:pdfbox:2.0.16'
+        }

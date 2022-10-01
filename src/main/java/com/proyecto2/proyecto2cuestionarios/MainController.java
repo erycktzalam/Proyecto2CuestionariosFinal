@@ -9,6 +9,13 @@ import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.Pane;
 
+import org.apache.pdfbox.pdmodel.PDDocument;
+import org.apache.pdfbox.pdmodel.PDPage;
+import org.apache.pdfbox.pdmodel.PDPageContentStream;
+import org.apache.pdfbox.pdmodel.common.PDRectangle;
+import org.apache.pdfbox.pdmodel.font.PDType1Font;
+import org.apache.pdfbox.pdmodel.graphics.image.PDImageXObject;
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -387,7 +394,7 @@ public class MainController implements Initializable {
             alert.setContentText("Debes seleccionar un cuestionario");
             alert.showAndWait();
 
-        } else if (cuestionario.isActivado()) {
+        } else if (!cuestionario.isActivado()) {
 
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setHeaderText(null);
@@ -402,6 +409,9 @@ public class MainController implements Initializable {
             int nuevoPin = obtenerNumeroAleatorio();
             cuestionarioClonado.setPin(nuevoPin);
 
+            listaCuestionario.add(cuestionarioClonado);
+            tableCuestionario.setItems(listaCuestionario);
+
             //obtener preguntas del cuestionario
 
 
@@ -409,6 +419,29 @@ public class MainController implements Initializable {
     }
 
     public void crearPDF(ActionEvent actionEvent) {
+
+        try (PDDocument document = new PDDocument()) {
+
+            cuestionario = this.tableCuestionario.getSelectionModel().getSelectedItem();
+
+            PDPage page = new PDPage(PDRectangle.A6);
+            document.addPage(page);
+
+            PDPageContentStream contentStream = new PDPageContentStream(document, page);
+
+            // Text
+            contentStream.beginText();
+            contentStream.setFont(PDType1Font.TIMES_BOLD, 6);
+            contentStream.newLineAtOffset( 20, page.getMediaBox().getHeight() - 52);
+            contentStream.showText(cuestionario.toString());
+            contentStream.endText();
+
+            contentStream.close();
+
+            document.save("document.pdf");
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
 
     }
 
@@ -420,5 +453,7 @@ public class MainController implements Initializable {
         double seisCifras = 100000 + Math.random() * 900000;
         return (int) seisCifras;
     }
+
+
 
 }
