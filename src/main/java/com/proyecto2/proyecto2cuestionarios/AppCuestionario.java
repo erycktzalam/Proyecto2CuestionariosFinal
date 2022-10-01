@@ -6,6 +6,7 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.Collections;
 
 public class AppCuestionario extends Application {
     @Override
@@ -20,4 +21,5 @@ public class AppCuestionario extends Application {
     public static void main(String[] args) {
         launch();
     }
+
 }

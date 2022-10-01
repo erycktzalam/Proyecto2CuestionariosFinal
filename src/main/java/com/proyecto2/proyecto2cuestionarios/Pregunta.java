@@ -7,17 +7,18 @@ public class Pregunta {
     private String pregunta;
     private int tiempo;
     private int puntos;
-    private ArrayList<Respuesta> respuestas;
 
-    public Pregunta(String pregunta, int tiempo, int puntos, ArrayList<Respuesta> respuestas) {
+    public static ArrayList<Respuesta> respuestas;
+
+    public Pregunta(String pregunta, int tiempo, int puntos) {
         this.pregunta = pregunta;
         this.tiempo = tiempo;
         this.puntos = puntos;
-        this.respuestas = new ArrayList<>();
+        respuestas = new ArrayList<>();
     }
 
     public void agregarRespuesta (Respuesta r){
-        this.respuestas.add(r);
+        respuestas.add(r);
     }
 
     public String getPregunta() {
@@ -42,5 +43,13 @@ public class Pregunta {
 
     public void setPuntos(int puntos) {
         this.puntos = puntos;
+    }
+    @Override
+    public String toString() {
+        return "Pregunta{" +
+                "pregunta='" + pregunta + '\'' +
+                ", tiempo=" + tiempo +
+                ", puntos=" + puntos +
+                '}';
     }
 }

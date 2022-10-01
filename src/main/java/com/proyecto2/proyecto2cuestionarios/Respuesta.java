@@ -25,4 +25,11 @@ public class Respuesta {
     public void setCorrecta(boolean correcta) {
         this.correcta = correcta;
     }
+    @Override
+    public String toString() {
+        return "Respuesta{" +
+                "respuesta='" + respuesta + '\'' +
+                ", correcta=" + correcta +
+                '}';
+    }
 }
