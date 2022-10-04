@@ -83,13 +83,35 @@ public class Cuestionario {
     public void setActivado(boolean activado) {
         this.activado = activado;
     }
-    public static ArrayList<Pregunta> getPreguntas() {
-        return preguntas;
-    }
-    public static void setPreguntas(ArrayList<Pregunta> preguntas) {
-        Cuestionario.preguntas = preguntas;
+
+    public int obtenerTamanoArrayPreguntas (){
+        int size = preguntas.size();
+        return size;
     }
 
+    public String obtenerPregunta () {
+        String p1 = null;
+        for (Pregunta pregunta : preguntas) {
+            p1 = pregunta.getPregunta();
+        }
+        return p1;
+    }
+
+    public int obtenerTiempo () {
+        int p2 = 0;
+        for (Pregunta pregunta : preguntas) {
+            p2 = pregunta.getTiempo();
+        }
+        return p2;
+    }
+
+    public int obtenerPuntos () {
+        int p3 = 0;
+        for (Pregunta pregunta : preguntas) {
+            p3 = pregunta.getPuntos();
+        }
+        return p3;
+    }
     @Override
     public String toString() {
         return "Cuestionario{" +

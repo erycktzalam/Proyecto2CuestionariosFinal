@@ -18,6 +18,7 @@ import org.apache.pdfbox.pdmodel.graphics.image.PDImageXObject;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 public class MainController implements Initializable {
@@ -410,9 +411,19 @@ public class MainController implements Initializable {
             listaCuestionario.add(cuestionarioClonado);
             tableCuestionario.setItems(listaCuestionario);
 
-            //obtener preguntas del cuestionario
+            //obtener preguntas del cuestionario y agregarlas al cuestionario clonado
 
+            for (int i = 0; i < cuestionario.obtenerTamanoArrayPreguntas(); i++){
+                Pregunta preguntaClonada = new Pregunta(cuestionario.obtenerPregunta(), cuestionario.obtenerTiempo(), cuestionario.obtenerPuntos());
+                cuestionarioClonado.agregarPreguntas(preguntaClonada);
+            }
 
+            //obtener respuestas de las preguntas y agregarlas a las preguntas del cuestionario clonado
+
+            for (int j = 0; j<p.obtenerTamanioArrayRespuestas(); j++){
+                Respuesta respuestasClonadas = new Respuesta(p.obtenerRespuestas(),p.obtenerCorrecta());
+                p.agregarRespuesta(respuestasClonadas);
+            }
         }
     }
 
